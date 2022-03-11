@@ -14,7 +14,7 @@ RUN apt update && \
     git \
     gnuplot-qt \
     gperf \
-    icoutils && \
+    icoutils \
     libarpack2-dev \
     libblas-dev \
     libbz2-dev \
@@ -52,7 +52,7 @@ RUN apt update && \
     qttools5-dev-tools \
     rapidjson-dev \
     texinfo \
-    zlib1g-dev \
+    zlib1g-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

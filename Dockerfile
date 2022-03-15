@@ -56,7 +56,8 @@ RUN apt update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# RUN git clone https://github.com/gnu-octave/octave.git && \
-#     ./bootstrap && \
-#     ./configure && \
-#     make -j4 install
+RUN git clone https://github.com/gnu-octave/octave.git && \
+    cd octave && \
+    ./bootstrap && \
+    ./configure --without-klu --disable-docs --disable-java && \
+    make -j4 install

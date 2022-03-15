@@ -12,10 +12,7 @@ Run the container by
 ```
 docker run -it -v `pwd`:/root octave-image bash
 ```
-Install octave in the container by
+To enable the GUI, try running the container by
 ```
-git clone https://github.com/gnu-octave/octave.git
-./bootstrap
-./configure
-make -j4 install
+docker run -it -v `pwd`:/root --volume /tmp/.X11-unix:/tmp/.X11-unix --env DISPLAY=$DISPLAY --volume $HOME/.Xauthority:/root/.Xauthority --hostname=$HOST octave-image bash
 ```
